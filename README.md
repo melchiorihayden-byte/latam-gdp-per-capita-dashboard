@@ -19,6 +19,7 @@ For the start and end metrics, only countries observed in both selected endpoint
 - `site.js` — CSV loading, calculations, filtering, URL state, and SVG charts.
 - `data.csv` — source panel data used by both the site and Tableau.
 - `check_numbers.py` — reproducible answer-key calculations.
+- `verify_site.js` — compares the browser calculation functions with the checked default and filtered values.
 - `numbers_check.md` — default values, findings, and a filtered spot-check.
 - `tableau_guide.md` — build instructions and expected worksheet values for Tableau Public.
 - `AGENTS.md` — locked definitions and project rules.
@@ -28,7 +29,7 @@ For the start and end metrics, only countries observed in both selected endpoint
 
 From this folder run `uv run python -m http.server 8000`, then open `http://localhost:8000/`. The dashboard uses `fetch` to load `data.csv`, so it needs a local web server (opening the HTML file directly will block the data request).
 
-Run `python check_numbers.py` to regenerate `numbers_check.md`.
+Run `uv run python check_numbers.py` to regenerate `numbers_check.md`, and `node verify_site.js` to check the website's calculations against the default and filtered answer-key values.
 
 ## Publish
 
