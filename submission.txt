@@ -1,0 +1,4 @@
+Hayden Melchiori
+https://github.com/melchiorihayden-byte/latam-gdp-per-capita-dashboard
+https://melchiorihayden-byte.github.io/latam-gdp-per-capita-dashboard/
+PENDING_TABLEAU_PUBLIC_URL

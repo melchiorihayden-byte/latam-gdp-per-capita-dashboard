@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A comparison of real GDP per capita across Latin America and the Caribbean, 2000–2023.">
+  <title>Which countries gained? | Regional Growth Brief</title>
+  <link rel="stylesheet" href="site.css">
+  <script defer src="site.js"></script>
+</head>
+<body>
+<header class="topbar"><nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="index.html">FIELDNOTES / LATAM ECONOMY</a><div class="navlinks"><a href="index.html" aria-current="page">Report</a><a href="dashboard.html">Explore data ↗</a></div></nav></header>
+<main id="report-app">
+  <section class="hero"><div class="wrap">
+    <div class="eyebrow">Regional growth brief · 2000–2023</div>
+    <h1>Which Latin American and Caribbean countries made the strongest real GDP-per-capita gains from 2000 to 2023?</h1>
+    <p class="subtitle">One country-year observation · GDP per capita in constant 2015 US dollars</p>
+    <p><span class="tag">Prepared by Hayden Melchiori</span><span class="tag">World Bank WDI</span><span class="tag" id="cohort-tag">Matched countries</span></p>
+    <p class="answer" id="answer"></p>
+    <p class="recommend">For regional investment screening, compare country-specific momentum and investigate the conditions behind each outlier before treating it as a regionwide pattern.</p>
+  </div></section>
+  <section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">The answer in four numbers</div><h2>Real gains, unevenly shared</h2></div><p>Each country gets equal weight. Start and end averages use only countries with observations in both 2000 and 2023.</p></div><div id="report-metrics" class="metrics"></div></div></section>
+  <section class="section alt"><div class="wrap"><div class="section-head"><div><div class="eyebrow">What stands out</div><h2>Three findings for a regional reader</h2></div><p>All percentage changes compare the two endpoint values for the same country. The charts rank countries, not populations or total national output.</p></div>
+    <div class="findings">
+      <article class="finding"><div class="eyebrow">01 · strongest rise</div><h3>The strongest percentage gain is an extreme outlier</h3><p id="finding-top"></p><div id="report-top-chart" class="chart" aria-label="Ten countries with the largest increase"></div><div class="small">Top 10 country changes from 2000 to 2023 (%).</div></article>
+      <article class="finding"><div class="eyebrow">02 · largest decline</div><h3>The weakest country outcome contrasts with the regional majority</h3><p id="finding-bottom"></p><div id="report-bottom-chart" class="chart" aria-label="Ten countries with the smallest or negative change"></div><div class="small">Bottom 10 country changes from 2000 to 2023 (%).</div></article>
+      <article class="finding"><div class="eyebrow">03 · breadth of change</div><h3>Most matched countries finished above their 2000 level</h3><p id="finding-breadth"></p><div id="report-trend-chart" class="chart" aria-label="Annual mean real GDP per capita"></div><div class="small">Annual equal-country mean for the 36 endpoint-matched countries; each point uses available observations for that year.</div></article>
+    </div>
+  </div></section>
+  <section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Explore the full panel</div><h2>See what changes by country and period</h2></div><p>Use the dashboard to choose countries and an endpoint range. The metrics and both charts recalculate from the data file.</p></div><a class="tag" href="dashboard.html">Open the interactive dashboard →</a></div></section>
+  <section class="section alt"><div class="wrap"><div class="eyebrow">Data and method</div><h2>What these numbers count</h2><div class="source">
+    <p>The data are from the <a href="https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.KD?date=2000:2023&amp;format=json&amp;per_page=20000">World Bank World Development Indicators API</a>, indicator <code>NY.GDP.PCAP.KD</code>, GDP per capita in constant 2015 US dollars. The World Bank describes this as inflation-adjusted GDP divided by population. The file contains <span id="source-row-count"></span> observed country-year records; <span id="source-country-count"></span> countries have at least one observation, and <span id="source-paired-count"></span> have both endpoint values.</p>
+    <p>One row is one country in one calendar year. The extract includes countries assigned to the World Bank’s Latin America &amp; Caribbean region (LCN), not regional or income-group aggregates. Missing values are not imputed. Countries without a value in either selected endpoint year are excluded from the paired endpoint comparison; for the default 2000–2023 view, <span id="source-paired-count-2"></span> countries remain.</p>
+    <p>Endpoint averages give every matched country equal weight. They are not GDP-weighted regional totals. Percent change is (2023 equal-country mean ÷ 2000 equal-country mean − 1) × 100. “Countries with an increase” counts matched countries whose 2023 value exceeds their 2000 value. Annual trend points average the available observations in that year among the 36 endpoint-matched countries, so the number of countries contributing to each point can vary slightly.</p>
+    <p><a href="numbers_check.md">Open the calculation and ground-truth notes</a>. Source series metadata: <a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/NY.GDP.PCAP.KD">World Bank indicator glossary</a>.</p>
+    <h3>Website and Tableau agreement</h3>
+    <p class="small">The comparison is completed after the Tableau dashboard is built and published with the default 2000–2023 period and all countries selected.</p>
+    <div class="table-wrap"><table class="agreement"><thead><tr><th>Metric</th><th>Website</th><th>Tableau</th></tr></thead><tbody id="agreement-values"></tbody></table></div>
+    <p class="pending">Tableau Public link: pending Tableau build and publication.</p>
+  </div></div></section>
+</main>
+<footer class="footer"><div class="wrap">Prepared by Hayden Melchiori · FINN 43303 Project B · <a href="dashboard.html">Explore the interactive panel</a> <span id="app-status" class="small"></span></div></footer>
+</body></html>
