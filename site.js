@@ -45,7 +45,7 @@ function svgBar(el, items, unit='%') {
   const W=820,rowH=29,H=Math.max(100,items.length*rowH+24),left=220,right=70,plot=W-left-right;
   const lo=Math.min(0,...items.map(d=>d.value)),hi=Math.max(0,...items.map(d=>d.value)); const span=hi-lo||1;
   const x=v=>left+(v-lo)/span*plot, zero=x(0);
-  const bars=items.map((d,i)=>{const y=12+i*rowH,w=Math.abs(x(d.value)-zero), bx=Math.min(zero,x(d.value)), cls=d.value<0?'bar neg':'bar';return `<text x="${left-9}" y="${y+17}" text-anchor="end">${esc(d.label)}</text><rect class="${cls}" x="${bx}" y="${y+2}" width="${Math.max(1,w)}" height="17" rx="4"/><text x="${d.value>=0?Math.min(W-2,x(d.value)+7):Math.max(left,x(d.value)-7)}" y="${y+16}" text-anchor="${d.value>=0?'start':'end'}">${d.value.toFixed(1)}${unit}</text>`}).join('');
+  const bars=items.map((d,i)=>{const y=12+i*rowH,w=Math.abs(x(d.value)-zero), bx=Math.min(zero,x(d.value)), cls=d.value<0?'bar neg':'bar';return `<text x="${left-9}" y="${y+17}" text-anchor="end">${esc(d.label)}</text><rect class="${cls}" x="${bx}" y="${y+2}" width="${Math.max(1,w)}" height="17" rx="4"/><text x="${d.value>=0?Math.min(W-2,x(d.value)+7):x(d.value)+6}" y="${y+16}" text-anchor="start">${d.value.toFixed(1)}${unit}</text>`}).join('');
   el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Country percentage changes"><line class="axis" x1="${zero}" x2="${zero}" y1="6" y2="${H-4}"/>${bars}</svg>`;
 }
 
