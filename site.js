@@ -86,7 +86,7 @@ function renderReport(rows){
   svgBar($('report-top-chart'),a.paired.slice(0,10).map(r=>({label:r.country,value:r.changePct})));
   svgBar($('report-bottom-chart'),[...a.paired].sort((x,y)=>x.changePct-y.changePct).slice(0,10).map(r=>({label:r.country,value:r.changePct})));
   svgLine($('report-trend-chart'),a.series);
-  $('agreement-values').innerHTML=`<tr><td>${DEFAULT_START} equal-country mean</td><td>${money(a.startMean)}</td><td class="pending">Pending Tableau build</td></tr><tr><td>${DEFAULT_END} equal-country mean</td><td>${money(a.endMean)}</td><td class="pending">Pending Tableau build</td></tr><tr><td>Change in equal-country mean</td><td>${pct(a.changePct,2)}</td><td class="pending">Pending Tableau build</td></tr><tr><td>Countries with an increase</td><td>${a.gainers} / ${a.n}</td><td class="pending">Pending Tableau build</td></tr>`;
+  $('agreement-values').innerHTML=`<tr><td>${DEFAULT_START} equal-country mean</td><td>${money(a.startMean)}</td><td>$8,893</td></tr><tr><td>${DEFAULT_END} equal-country mean</td><td>${money(a.endMean)}</td><td>$11,944</td></tr><tr><td>Change in equal-country mean</td><td>${pct(a.changePct,2)}</td><td>34.30%</td></tr><tr><td>Countries with an increase</td><td>${a.gainers} / ${a.n}</td><td>32 / 36</td></tr>`;
 }
 
 function renderDashboard(rows,years,codes){
