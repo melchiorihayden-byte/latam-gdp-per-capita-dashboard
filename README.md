@@ -7,7 +7,7 @@
 
 ## Data and definitions
 
-`data.csv` is an extract of the World Bank World Development Indicators API for indicator `NY.GDP.PCAP.KD` (GDP per capita, constant 2015 US$), limited to World Bank country records in region code LCN and years 2000–2023. The API returned 935 nonmissing observations across 40 country groups. Thirty-six countries have data at both endpoints. No missing values are filled, and no regional aggregates are included. The source series definition is documented in the [World Bank indicator glossary](https://databank.worldbank.org/metadataglossary/world-development-indicators/series/NY.GDP.PCAP.KD).
+`data.csv` is an extract of the World Bank World Development Indicators API for indicator `NY.GDP.PCAP.KD` (GDP per capita, constant 2015 US$), limited to World Bank country records in region code LCN and years 2000–2023. The API returned 935 nonmissing observations across 40 country groups. Thirty-six countries have data at both endpoints. No missing values are filled, and no regional aggregates are included. “Strongest gain” means the largest percentage change in a country’s value, not the largest absolute dollar increase. The source series definition is documented in the [World Bank indicator glossary](https://databank.worldbank.org/metadataglossary/world-development-indicators/series/NY.GDP.PCAP.KD).
 
 For the start and end metrics, only countries observed in both selected endpoint years are included, and each country has equal weight. The percentage change is the 2023 mean divided by the 2000 mean, minus one. The gain count is the number of matched countries whose endpoint increased. Annual trend means use the same matched country cohort, averaging available observations in each year.
 
@@ -26,7 +26,7 @@ For the start and end metrics, only countries observed in both selected endpoint
 
 ## Preview locally
 
-From this folder run `python -m http.server 8000`, then open `http://localhost:8000/`. The dashboard uses `fetch` to load `data.csv`, so it needs a local web server (opening the HTML file directly will block the data request).
+From this folder run `uv run python -m http.server 8000`, then open `http://localhost:8000/`. The dashboard uses `fetch` to load `data.csv`, so it needs a local web server (opening the HTML file directly will block the data request).
 
 Run `python check_numbers.py` to regenerate `numbers_check.md`.
 

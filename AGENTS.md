@@ -8,6 +8,7 @@
 - Keep all metric definitions consistent across the report, interactive dashboard, and Tableau.
 - Keep missing observations missing; do not interpolate. Exclude aggregates and countries without both endpoint observations from endpoint comparisons.
 - The country groups are equally weighted in the endpoint averages. Do not pool national GDP or population.
+- “Strongest gain” means the largest percentage change in a country’s endpoint GDP-per-capita value, not the largest dollar increase.
 - Recompute every displayed number from data.csv; never type calculated values into the site.
 - Do not publish until the data, numbers, and links are reviewed.
 
