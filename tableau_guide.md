@@ -2,6 +2,20 @@
 
 Build this workbook yourself in Tableau Public using `data.csv` from the same project folder. The project definition is one observed country-year row; years 2000–2023; endpoint comparisons include only countries with values at both endpoints. Keep all 36 matched countries selected by default.
 
+## If you have never used Tableau: where to click
+
+1. Open **Tableau Public**. On the start screen, find **Connect** on the left and click **Text file**. Browse to `C:\Users\Melch\Downloads\portfolio-dashboard\data.csv` and open it.
+2. Tableau shows a data preview. Confirm you see columns named `country`, `iso3`, `year`, and `gdp_per_capita_constant_2015_usd`. If the preview looks like one long text column, cancel and open it with **Text file** (not Excel).
+3. Click **Sheet 1** at the bottom. Tableau calls each page of a workbook a sheet. The left panel is the **Data pane** (your columns); the center is the worksheet; the bottom tabs are where you add more sheets.
+4. To make a calculated field, right-click an empty area in the Data pane and choose **Create Calculated Field**. A formula window opens. Type the field name in the title area, paste the formula from below into the large box, then click **OK**. Repeat for each field.
+5. If a formula has an error, check that its spelling and capitalization match the formula below and that the field names match the Data pane. Tableau’s formula box will underline unknown names in red.
+6. To make a chart, drag a field from the Data pane to **Columns** or **Rows**. Drag a measure onto the view or the **Marks** card. To change a chart type, use the dropdown that says **Automatic** on the Marks card.
+7. Add sheets with the small new-sheet icon near the bottom tabs (a page with a plus). Rename a sheet by double-clicking its tab. Do the calculated fields first, then build the charts and KPI sheets.
+8. To make the dashboard, click the **New Dashboard** icon beside the sheet tabs. In the left pane, drag each worksheet onto the large blank dashboard. Drag the **Country** filter card into the dashboard too.
+9. When finished, choose **File → Save to Tableau Public As**. Sign in if Tableau asks, give the workbook a name, and wait for the published page to open. Copy the URL from the browser address bar; it should be a `public.tableau.com` link.
+
+You do not need to build every optional chart. The four KPI numbers, annual trend, one ranked bar chart, a country filter affecting the sheets, and the finding sentence satisfy the core Tableau requirements.
+
 ## Default values to verify
 
 From `numbers_check.md`:
